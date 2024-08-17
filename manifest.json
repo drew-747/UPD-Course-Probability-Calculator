@@ -1,12 +1,10 @@
 {
-  "manifest_version": 2,
-  "name": "Course Probability Calculator",
+  "manifest_version": 3,
+  "name": "UPD Course Probability Calculator",
   "version": "1.0",
-  "description": "Calculate the probability of getting into a course based on available slots and demand.",
-  "browser_action": {
+  "description": "Calculate the probability of getting into a UPD course based on available slots and demand.",
+  "action": {
     "default_popup": "popup.html"
   },
-  "permissions": [
-    "activeTab"
-  ]
+  "permissions": []
 }
