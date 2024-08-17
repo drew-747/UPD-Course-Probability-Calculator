@@ -46,7 +46,7 @@ $$
 \text{Probability} = \frac{\min(\text{P}, \text{Available Slots})}{\text{Total Demand * 0.25}}
 $$
 
-if the student is a priority, otherwise,
+If the student is a priority, otherwise,
 
 $$
 \text{Probability} = \frac{\text{Available Slots} - P}{\text{Total Demand * 0.75}}
@@ -58,7 +58,7 @@ $$
 
 ## Contributing
 
-Feel free to fork this project, submit issues, or make pull requests to suggest improvements. Contributions are always welcome!
+Feel free to fork this project, submit issues, or make pull requests to suggest improvements.
 
 ## License
 
