@@ -34,9 +34,8 @@ Entering these values will show you the likelihood of getting into the course.
 
 The probability is calculated as:
 
-\[
-\text{Probability} = \frac{\text{Available Slots}}{\text{Total Demand}}
-\]
+$$\text{Probability} = \frac{\text{Available Slots}}{\text{Total Demand}} $$
+
 
 ### Future Enhancements
 
