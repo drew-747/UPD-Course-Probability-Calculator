@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPD Course Probability Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --upd-maroon: #8b0000;
+            --upd-green: #006400;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+
+        body {
+            width: 350px;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--upd-maroon);
+            margin-top: 0;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--upd-green);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #005000;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            font-weight: 500;
+            text-align: center;
+        }
+    </style>
+    <script src="popup.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>UPD Course Probability Calculator</h2>
+        <div class="input-group">
+            <label for="totalSlots">Total Class Size:</label>
+            <input type="number" id="totalSlots" placeholder="Enter total number of slots">
+        </div>
+        <div class="input-group">
+            <label for="availableSlots">Available Slots:</label>
+            <input type="number" id="availableSlots" placeholder="Enter number of available slots">
+        </div>
+        <div class="input-group">
+            <label for="totalDemand">Total Demand:</label>
+            <input type="number" id="totalDemand" placeholder="Enter total number of demand">
+        </div>
+        <button id="calculateBtn">Calculate Probability</button>
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>

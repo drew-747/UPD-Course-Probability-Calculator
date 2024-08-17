@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Course Probability Calculator",
+  "version": "1.0",
+  "description": "Calculate the probability of getting into a course based on available slots and demand.",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
