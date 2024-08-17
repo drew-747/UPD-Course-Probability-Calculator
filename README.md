@@ -1,3 +1,4 @@
+
 <img src="https://seeklogo.com/images/U/university-of-the-philippines-diliman-upd-logo-65770383FD-seeklogo.com.png" alt="University of the Philippines Diliman Logo" width="100" height="100">
 
 # UPD Course Probability Calculator
@@ -64,6 +65,6 @@ Feel free to fork this project, submit issues, or make pull requests to suggest 
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
----
+## Disclaimer: 
 
-**Disclaimer:** This tool provides a basic probability calculation and should not be solely relied upon for course selection decisions.
+This tool provides a basic probability calculation and should not be solely relied upon for course selection decisions.
