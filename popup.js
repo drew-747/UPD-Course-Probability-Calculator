@@ -23,7 +23,6 @@ const CUMULATIVE_PRIO_TO_PERCENTAGE_MAP_REVERSED = {
 }
 
 const calculateProbability = (studentPriority, availableSlots, totalDemand, hasStudentsWithPriority=true) => {
-  console.log(studentPriority, availableSlots, totalDemand, hasStudentsWithPriority)
   if (hasStudentsWithPriority) {
     // We can actually display all variables for better visibility later on
     const totalDemandOfHigherPrio = totalDemand*(CUMULATIVE_PRIO_TO_PERCENTAGE_MAP[studentPriority])
@@ -33,7 +32,6 @@ const calculateProbability = (studentPriority, availableSlots, totalDemand, hasS
     const demandAfterSlotsTaken = totalDemand - (availableSlots - freeSlotsLeft)
     const remainingDemand = Math.max(demandAfterSlotsTaken - totalDemandOfLowerPrio, 1) // that 1 is you!
 
-    console.log(freeSlotsLeft, remainingDemand)
     return freeSlotsLeft / remainingDemand
   } else {
     // Assumes everyone has the same prio (e.g. class full of freshmen, major subject, thesis, etc.)
