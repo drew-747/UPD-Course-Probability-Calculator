@@ -13,8 +13,8 @@ You only need a web browser to use this calculator. No server or backend setup i
 
 ### How to Use
 
-1. Clone the repository or download the `index.html` file.
-2. Open the `index.html` file in your web browser.
+1. Clone the repository or download the `popup.html` + `popup.js` files.
+2. Open the `popup.html` file in your web browser.
 3. Enter the following details:
    - **Total Class Size:** The total number of slots available in the course.
    - **Available Slots:** The number of slots still open for students.
@@ -34,28 +34,12 @@ Entering these values will show you the likelihood of getting into the course.
 
 ### Calculation Logic
 
-The probability is calculated as:
-
-$$
-\text{Probability} = \frac{\text{Available Slots}}{\text{Total Demand}}
-$$
-
-Given that the course prioritizes $\text{P}$ number of students, and assuming
-that $25\%$ of the demand is priority,
-
-$$
-\text{Probability} = \frac{\min(\text{P}, \text{Available Slots})}{\text{Total Demand * 0.25}}
-$$
-
-If the student is a priority, otherwise,
-
-$$
-\text{Probability} = \frac{\text{Available Slots} - P}{\text{Total Demand * 0.75}}
-$$
+Latex to follow -- read `calculateProbability` for more details.
 
 ### Future Enhancements
 
 - Use of better calculation logic to estimate the probability.
+- Integrate to original [UPD CRS Schedule Converter](https://github.com/drew-747/UPD-CRS-Schedule-Converter)
 
 ## Contributing
 

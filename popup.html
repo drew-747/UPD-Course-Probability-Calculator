@@ -15,7 +15,7 @@
         }
 
         body {
-            width: 350px;
+            width: 400px;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 20px;
@@ -39,6 +39,10 @@
 
         .input-group {
             margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 300px;
         }
 
         label {
@@ -72,10 +76,6 @@
             background-color: #005000;
         }
 
-        #isPriority {
-            width: auto;
-        }
-
         #result {
             margin-top: 20px;
             padding: 10px;
@@ -92,10 +92,6 @@
     <div class="container">
         <h2>UPD Course Probability Calculator</h2>
         <div class="input-group">
-            <label for="totalSlots">*Total Class Size:</label>
-            <input type="number" id="totalSlots" required placeholder="Enter total number of slots">
-        </div>
-        <div class="input-group">
             <label for="availableSlots">*Available Slots:</label>
             <input type="number" id="availableSlots" required placeholder="Enter number of available slots">
         </div>
@@ -104,15 +100,34 @@
             <input type="number" id="totalDemand" required placeholder="Enter total number of demand">
         </div>
         <div class="input-group">
-            <label for="totalPriority">Total Number of Prioritized Students:</label>
-            <input type="number" id="totalPriority" placeholder="Enter number of prioritized students">
+            <label for="studentPriority">Current priority</label>
+            <select name="studentPriority" id="studentPriority">
+                <option value="specialNeeds">Student with Special Needs</option>
+                <option value="graduating">Graduating</option>
+                <option value="assistant">Student Assistant</option>
+                <option value="freshman">Freshman</option>
+                <option value="varsity">Varsity</option>
+                <option value="cadetOfficer">Cadet Officer</option>
+                <option value="regular" selected>Regular</option>
+                <option value="lowPriority">Low Priority</option>
+            </select>
         </div>
         <div class="input-group">
-            <input type="checkbox" id="isPriority">
-            <label for="isPriority" style="display: inline;">I am a prioritized student</label>
+            <input type="checkbox" id="hasStudentsWithPriority" style="width: auto" checked>
+            <label for="hasStudentsWithPriority" style="display: inline;">This is a uni-wide course**</label>
         </div>
+        <!-- Put into a tooltip / footnote later -->
+        <p>
+            **Calculation will take into account student priorities and likelihood that course applied to has significant # of applicants with differing priorities from you (e.g. GE courses)
+        </p>
+        <p>
+            **Rule of thumb: leave this checked for GE / large courses, leave this unchecked for major / degree program-specific courses
+        </p>
+        <!-- Dev note: probably automate this rather than leaving it for student to fill up -->
         <button id="calculateBtn">Calculate Probability</button>
-        <div id="result"></div>
+        <div id="result">
+            Fill out details to find your probability.
+        </div>
     </div>
 </body>
 
