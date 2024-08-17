@@ -18,9 +18,9 @@ You only need a web browser to use this calculator. No server or backend setup i
    - **Total Class Size:** The total number of slots available in the course.
    - **Available Slots:** The number of slots still open for students.
    - **Total Demand:** The total number of students who want to enroll in the course.
-   - (optional) **Number of Priority Students:** The total number of students who are prioritized in getting the course.
+   - **Number of Priority Students:** The total number of students who are prioritized in getting the course. (Optional) 
 4. Click the "Calculate Probability" button.
-5. The probability of securing a slot will be displayed in the results section.
+5. The probability of securing a slot will be displayed (%) in the results section.
 
 ### Example
 
