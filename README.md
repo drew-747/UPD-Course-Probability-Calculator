@@ -18,6 +18,7 @@ You only need a web browser to use this calculator. No server or backend setup i
    - **Total Class Size:** The total number of slots available in the course.
    - **Available Slots:** The number of slots still open for students.
    - **Total Demand:** The total number of students who want to enroll in the course.
+   - (optional) **Number of Priority Students:** The total number of students who are prioritized in getting the course.
 4. Click the "Calculate Probability" button.
 5. The probability of securing a slot will be displayed in the results section.
 
@@ -34,13 +35,26 @@ Entering these values will show you the likelihood of getting into the course.
 
 The probability is calculated as:
 
-\[
+$$
 \text{Probability} = \frac{\text{Available Slots}}{\text{Total Demand}}
-\]
+$$
+
+Given that the course prioritizes $\text{P}$ number of students, and assuming
+that $25\%$ of the demand is priority,
+
+$$
+\text{Probability} = \frac{\min(\text{P}, \text{Available Slots})}{\text{Total Demand * 0.25}}
+$$
+
+if the student is a priority, otherwise,
+
+$$
+\text{Probability} = \frac{\text{Available Slots} - P}{\text{Total Demand * 0.75}}
+$$
 
 ### Future Enhancements
 
-- Include the probability of getting the course, when the course prioritizes X number of students from N Degree Program. 
+- Use of better calculation logic to estimate the probability.
 
 ## Contributing
 

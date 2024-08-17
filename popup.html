@@ -72,6 +72,10 @@
             background-color: #005000;
         }
 
+        #isPriority {
+            width: auto;
+        }
+
         #result {
             margin-top: 20px;
             padding: 10px;
@@ -88,16 +92,24 @@
     <div class="container">
         <h2>UPD Course Probability Calculator</h2>
         <div class="input-group">
-            <label for="totalSlots">Total Class Size:</label>
-            <input type="number" id="totalSlots" placeholder="Enter total number of slots">
+            <label for="totalSlots">*Total Class Size:</label>
+            <input type="number" id="totalSlots" required placeholder="Enter total number of slots">
         </div>
         <div class="input-group">
-            <label for="availableSlots">Available Slots:</label>
-            <input type="number" id="availableSlots" placeholder="Enter number of available slots">
+            <label for="availableSlots">*Available Slots:</label>
+            <input type="number" id="availableSlots" required placeholder="Enter number of available slots">
         </div>
         <div class="input-group">
-            <label for="totalDemand">Total Demand:</label>
-            <input type="number" id="totalDemand" placeholder="Enter total number of demand">
+            <label for="totalDemand">*Total Demand:</label>
+            <input type="number" id="totalDemand" required placeholder="Enter total number of demand">
+        </div>
+        <div class="input-group">
+            <label for="totalPriority">Number of Prioritized Students:</label>
+            <input type="number" id="totalPriority" placeholder="Enter number of prioritized students">
+        </div>
+        <div class="input-group">
+            <input type="checkbox" id="isPriority">
+            <label for="isPriority" style="display: inline;">I am prioritized</label>
         </div>
         <button id="calculateBtn">Calculate Probability</button>
         <div id="result"></div>
