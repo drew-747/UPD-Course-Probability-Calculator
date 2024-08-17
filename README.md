@@ -1,3 +1,5 @@
+<img src="https://seeklogo.com/images/U/university-of-the-philippines-diliman-upd-logo-65770383FD-seeklogo.com.png" alt="University of the Philippines Diliman Logo" width="100" height="100">
+
 # UPD Course Probability Calculator
 
 This is a simple web-based calculator designed to estimate the probability of a student getting into a course at the University of the Philippines Diliman (UPD) based on the total class size, available slots, and total demand.
