@@ -1,0 +1,116 @@
+:root {
+    --upd-maroon: #7B1113;
+    --upd-gold: #F3C224;
+    --upd-forest-green: #2E5B2F;
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --input-border-color: #CCCCCC;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    width: 320px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+h1 {
+    color: var(--upd-maroon);
+    font-size: 16px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--upd-maroon);
+}
+
+.checkbox-group {
+    margin-top: 5px; 
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--upd-maroon);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--upd-forest-green);
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--upd-gold);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--upd-maroon);
+}
