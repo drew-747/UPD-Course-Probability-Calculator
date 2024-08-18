@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('calculatorForm');
     const resultElement = document.getElementById('result');
 
+    if (!form) {
+        console.error('Calculator form not found');
+        return;
+    }
+
     const CUMULATIVE_PRIO_TO_PERCENTAGE_MAP = {
         "specialNeeds": 0.0,
         "graduating": 0.05,
