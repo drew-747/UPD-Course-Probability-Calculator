@@ -11,38 +11,34 @@
 <body>
     <div class="container">
         <h1>UPD Course Probability Calculator</h1>
-
-        <div class="input-group">
-            <label for="availableSlots">Available Slots:</label>
-            <input type="number" id="availableSlots" required>
-        </div>
-
-        <div class="input-group">
-            <label for="totalDemand">Total Demand:</label>
-            <input type="number" id="totalDemand" required>
-        </div>
-
-        <div class="input-group">
-            <label for="studentPriority">Current priority:</label>
-            <select id="studentPriority">
-                <option value="specialNeeds">Student with Special Needs</option>
-                <option value="graduating">Graduating Student</option>
-                <option value="assistant">Assistant</option>
-                <option value="freshman">Freshman</option>
-                <option value="varsity">Varsity</option>
-                <option value="cadetOfficer">Cadet Officer</option>
-                <option value="regular">Regular</option>
-                <option value="lowPriority">Low Priority</option>
-            </select>
-        </div>
-
-        <div class="checkbox-group">
-            <input type="checkbox" styleid="hasStudentsWithPriority">
-            <label for="hasStudentsWithPriority">This is a uni-wide course</label>
-        </div>
-
-        <button type="submit">Calculate</button>
-
+        <form id="calculatorForm">
+            <div class="input-group">
+                <label for="availableSlots">Available Slots:</label>
+                <input type="number" id="availableSlots" required>
+            </div>
+            <div class="input-group">
+                <label for="totalDemand">Total Demand:</label>
+                <input type="number" id="totalDemand" required>
+            </div>
+            <div class="input-group">
+                <label for="studentPriority">Current priority:</label>
+                <select id="studentPriority">
+                    <option value="specialNeeds">Student with Special Needs</option>
+                    <option value="graduating">Graduating Student</option>
+                    <option value="assistant">Assistant</option>
+                    <option value="freshman">Freshman</option>
+                    <option value="varsity">Varsity</option>
+                    <option value="cadetOfficer">Cadet Officer</option>
+                    <option value="regular">Regular</option>
+                    <option value="lowPriority">Low Priority</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="hasStudentsWithPriority">
+                <label for="hasStudentsWithPriority">This is a uni-wide course</label>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
         <div id="result"></div>
     </div>
     <script src="popup.js"></script>
