@@ -18,30 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
         "lowPriority": 0.95,
     };
 
-    const CUMULATIVE_PRIO_TO_PERCENTAGE_MAP_REVERSED = {
-        "specialNeeds": 0.95,
-        "graduating": 0.85,
-        "assistant": 0.84,
-        "freshman": 0.59,
-        "varsity": 0.54,
-        "cadetOfficer": 0.53,
-        "regular": 0.05,
-        "lowPriority": 0.0,
-    };
-
     function calculateProbability(studentPriority, availableSlots, totalDemand, hasStudentsWithPriority) {
         if (hasStudentsWithPriority) {
-            const totalDemandOfHigherPrio = totalDemand * (CUMULATIVE_PRIO_TO_PERCENTAGE_MAP[studentPriority]);
-            const totalDemandOfLowerPrio = totalDemand * (CUMULATIVE_PRIO_TO_PERCENTAGE_MAP_REVERSED[studentPriority]);
+            const cumulativePercentage = CUMULATIVE_PRIO_TO_PERCENTAGE_MAP[studentPriority];
+            const demandForThisPriority = totalDemand * (cumulativePercentage - (CUMULATIVE_PRIO_TO_PERCENTAGE_MAP[getPreviousPriority(studentPriority)] || 0));
+            const totalDemandOfHigherPrio = totalDemand * cumulativePercentage;
 
-            const freeSlotsLeft = Math.max(availableSlots - totalDemandOfHigherPrio, 0);
-            const demandAfterSlotsTaken = totalDemand - (availableSlots - freeSlotsLeft);
-            const remainingDemand = Math.max(demandAfterSlotsTaken - totalDemandOfLowerPrio, 1);
-
-            return freeSlotsLeft / remainingDemand;
+            if (availableSlots > totalDemandOfHigherPrio) {
+                return 1; // 100% chance if there are more slots than higher priority demand
+            } else {
+                const slotsForThisPriority = Math.max(availableSlots - (totalDemandOfHigherPrio - demandForThisPriority), 0);
+                return slotsForThisPriority / demandForThisPriority;
+            }
         } else {
-            return availableSlots / totalDemand;
+            return Math.min(availableSlots / totalDemand, 1);
         }
+    }
+
+    function getPreviousPriority(priority) {
+        const priorities = Object.keys(CUMULATIVE_PRIO_TO_PERCENTAGE_MAP);
+        const index = priorities.indexOf(priority);
+        return index > 0 ? priorities[index - 1] : null;
     }
 
     form.addEventListener('submit', function(e) {
@@ -58,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const probability = calculateProbability(studentPriority, availableSlots, totalDemand, hasStudentsWithPriority);
-        const percentage = Math.min(probability * 100, 100).toFixed(2);
+        const percentage = (probability * 100).toFixed(2);
 
         resultElement.textContent = `Probability of getting the course: ${percentage}%`;
     });
